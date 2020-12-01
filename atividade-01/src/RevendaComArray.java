@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public class RevendaComArray {
     //produtos a serem comprados
     private Produto[] produtos;
@@ -14,30 +13,46 @@ public class RevendaComArray {
         id = 0;
     }
 
+    /*
+     * Inserir produto pra revenda
+     */
     public void inserirProduto(Produto p) {
-        produtos[id] = p;
-        id++;
+        if(!existeProduto(p)) {
+            produtos[id] = p;
+            id++;
+        }
     }
 
     public void comprar(int cod, int qtdp) {
+        if(existeProduto(cod)) {
+            for (int k = 0; k < produtos.length; k++)
+                if(produtos[k].equals(cod))
+                    produtos[k].compra(1);
+        }
+    }
+
+    //verificar se o produto existe pelo codigo
+    private boolean existeProduto(int cod) {
         boolean existe = false;
-        //verificar se produto existe
+        
         for (int j = 0; j < produtos.length && !existe; j++)
             if(produtos[j].equals(cod))
                 existe = true;
 
-        if(!existe) {
-            System.out.println("Produto não existe");
-            return;
-        }
-
-        for (int k = 0; k < produtos.length; k++) {
-            if(produtos[j].equals(cod)) {
-                
-            }
-        }
+        return existe;
     }
 
+    //verificar se o produto existe
+    private boolean existeProduto(Produto p) {
+        boolean existe = false;
+        
+        for (int j = 0; j < produtos.length && !existe; j++)
+            if(produtos[j].equals(p))
+                existe = true;
+
+        return existe;
+    }
+    
     public void vender() {
 
     }
