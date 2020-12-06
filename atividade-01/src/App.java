@@ -39,6 +39,15 @@ public class App {
                 case "list":
                     rev.listaPrecos();
                     break;
+                case "altvc":
+                    rev.altValorCompra(Integer.parseInt(comandos[1]), Double.parseDouble(comandos[2]));
+                    break;
+                case "altcust":
+                    rev.altCusto(Integer.parseInt(comandos[1]), Double.parseDouble(comandos[2]));
+                    break;
+                case "altmarg":
+                    rev.altMargemLucro(Integer.parseInt(comandos[1]), Double.parseDouble(comandos[2]));
+                    break;
                 case "exit":
                     shellAtivo = false;
                 default:

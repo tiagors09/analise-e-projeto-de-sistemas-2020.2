@@ -81,4 +81,37 @@ public class RevendaComArray {
                 System.out.println(produto);
         }
     }
+
+    public boolean altValorCompra(int cod, double valorCompra) {
+        if(existeProduto(cod))
+            for (Produto produto : produtos)
+                if(produto.equals(cod)) {
+                    produto.setValor_compra(valorCompra);
+                    return true;
+                }
+        
+        return false;
+    }
+
+    public boolean altCusto(int cod, double custo) {
+        if(existeProduto(cod))
+            for (Produto produto : produtos)
+                if(produto.equals(cod)) {
+                    produto.setCusto(custo);
+                    return true;
+                }
+        
+        return false;
+    }
+
+    public boolean altMargemLucro(int cod, double margemLucro) {
+        if(existeProduto(cod))
+            for (Produto produto : produtos)
+                if(produto.equals(cod)) {
+                    produto.setMargem_lucro(margemLucro);
+                    return true;
+                }
+        
+        return false;
+    }
 }
