@@ -33,6 +33,8 @@ public class App {
                 case "comp": 
                     rev.comprar(Integer.parseInt(comandos[1]), Integer.parseInt(comandos[2]));
                     break;
+                case "exit":
+                    shellAtivo = false;
                 default:
                     break;
             }
