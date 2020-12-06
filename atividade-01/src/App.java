@@ -33,6 +33,12 @@ public class App {
                 case "comp": 
                     rev.comprar(Integer.parseInt(comandos[1]), Integer.parseInt(comandos[2]));
                     break;
+                case "cons":
+                    rev.consultaPrecoVenda(Integer.parseInt(comandos[1]));
+                    break;
+                case "list":
+                    rev.listaPrecos();
+                    break;
                 case "exit":
                     shellAtivo = false;
                 default:
