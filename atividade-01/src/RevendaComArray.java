@@ -29,11 +29,11 @@ public class RevendaComArray {
     }
 
     public void comprar(int cod, int qtdp) {
-        if(existeProduto(cod)) {
-            for (int k = 0; k < produtos.length; k++)
-                if(produtos[k].equals(cod))
-                    produtos[k].compra(1);
-        }
+        if(existeProduto(cod))
+            for (Produto produto : produtos) 
+                if(produto.equals(cod))
+                    produto.compra(qtdp);
+        else System.out.println("Error");
     }
 
     //verificar se o produto existe pelo codigo
@@ -54,14 +54,27 @@ public class RevendaComArray {
         return false;
     }
     
-    public void vender() {
-
+    //Vender produto da revenda
+    public void vender(int cod, int qtdUn) {
+        if(existeProduto(cod))
+            for (Produto produto : produtos)
+                if(produto.equals(cod)) {
+                    produto.venda(qtdUn);
+                    break;
+                }
+        else System.out.println("Error");
     }
 
-    public void consultaPrecoVenda() {
-
+    //Consulta preço do produto
+    public void consultaPrecoVenda(int cod) {
+        if(existeProduto(cod))
+            for (Produto produto : produtos)
+                if(produto.equals(cod))
+                    System.out.println(produto.getCusto());
+        else System.out.println("Error");
     }
 
+    
     public void listaPrecos() {
 
     }
