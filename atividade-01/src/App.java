@@ -34,7 +34,7 @@ public class App {
                     rev.comprar(Integer.parseInt(comandos[1]), Integer.parseInt(comandos[2]));
                     break;
                 case "exit":
-                    shellAtivo = falsa;
+                    shellAtivo = false;
                 default:
                     break;
             }
