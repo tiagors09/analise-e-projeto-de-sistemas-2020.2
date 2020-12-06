@@ -4,6 +4,11 @@ public class RevendaComArray {
     //indice atual da lista dos espiritos
     private int id;
 
+    //Construtor genérico
+    public RevendaComArray() {
+        super();
+    }
+
     /*
      * Construtor
      * @param qtd_prods quantidade de produtos
@@ -33,24 +38,20 @@ public class RevendaComArray {
 
     //verificar se o produto existe pelo codigo
     private boolean existeProduto(int cod) {
-        boolean existe = false;
-        
-        for (int j = 0; j < produtos.length && !existe; j++)
-            if(produtos[j].equals(cod))
-                existe = true;
-
-        return existe;
+        if(id > 0)
+            for (Produto produto : produtos)
+                if(produto.equals(cod))
+                    return true;
+        return false;
     }
 
     //verificar se o produto existe
     private boolean existeProduto(Produto p) {
-        boolean existe = false;
-        
-        for (int j = 0; j < produtos.length && !existe; j++)
-            if(produtos[j].equals(p))
-                existe = true;
-
-        return existe;
+        if(id > 0)
+            for (Produto produto : produtos)
+                if(produto.equals(p))
+                    return true;
+        return false;
     }
     
     public void vender() {
