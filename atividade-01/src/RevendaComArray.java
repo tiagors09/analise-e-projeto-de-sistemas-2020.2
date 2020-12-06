@@ -1,10 +1,10 @@
 public class RevendaComArray {
-    //produtos a serem comprados
+    // produtos a serem comprados
     private Produto[] produtos;
-    //indice atual da lista dos espiritos
+    // sindice atual da lista dos espiritos
     private int id;
 
-    //Construtor genérico
+    // Construtor genérico
     public RevendaComArray() {
         super();
     }
@@ -19,7 +19,8 @@ public class RevendaComArray {
     }
 
     /*
-     * Inserir produto pra revenda
+     * Inserir produto
+     * @param p produto a ser adicionado
      */
     public void inserirProduto(Produto p) {
         if(!existeProduto(p)) {
@@ -28,53 +29,77 @@ public class RevendaComArray {
         }
     }
 
-    public void comprar(int cod, int qtdp) {
+    /*
+     * Comprar produtos
+     * @param cod codigo de produto
+     * @param qtdp quantiadade de produtos
+     */
+    public void comprar(int cod, int qtd) {
         if(existeProduto(cod))
             for (Produto produto : produtos) 
                 if(produto.equals(cod))
-                    produto.compra(qtdp);
-        else System.out.println("Error");
+                    produto.compra(qtd);
+        else System.out.println("Error: produto nao existe");
     }
 
-    //verificar se o produto existe pelo codigo
-    private boolean existeProduto(int cod) {
+    /*
+     * Verificar se o produto existe pelo codigo
+     * @param cod codigo de produto
+     */
+     private boolean existeProduto(int cod) {
         if(id > 0)
             for (Produto produto : produtos)
-                if(produto.equals(cod))
+                if(produto != null && produto.equals(cod))
                     return true;
+                else return false;
         return false;
     }
 
-    //verificar se o produto existe
+    /*
+     * verificar se o produto existe
+     * se a quantidade de itens pra revenda
+     * for maior que 0 então é feito uma iteração
+     * percorre o array de produtos e verifica a
+     * existência do produto, caso exista, retorna verdadeiro
+     * @param p produto a verificar existência
+     */
     private boolean existeProduto(Produto p) {
         if(id > 0)
             for (Produto produto : produtos)
-                if(produto.equals(p))
+                if(produto != null && produto.equals(p))
                     return true;
+                else return false;
         return false;
     }
     
-    //Vender produto da revenda
-    public void vender(int cod, int qtdUn) {
+    /*
+     * Vender produto da revenda
+     * @param cod codigo do produto
+     * @param qtd quantidade de produtos
+     */
+    public void vender(int cod, int qtd) {
         if(existeProduto(cod))
             for (Produto produto : produtos)
                 if(produto.equals(cod)) {
-                    produto.venda(qtdUn);
+                    produto.venda(qtd);
                     break;
                 }
-        else System.out.println("Error");
+        else System.out.println("Error: produto nao existe");
     }
 
-    //Consulta preço do produto
+    /*
+     * Consulta preço do produto pelo codigo
+     * @param cod codigo do produto
+     */
     public void consultaPrecoVenda(int cod) {
         if(existeProduto(cod))
             for (Produto produto : produtos)
                 if(produto.equals(cod))
                     System.out.println(produto.calculaPrecoVenda());
-        else System.out.println("Error");
+        else System.out.println("Error: produto nao existe");
     }
 
-    //lista 
+    // Listar preços
     public void listaPrecos() {
         for (Produto produto : produtos) {
             if(produto != null)
@@ -82,36 +107,48 @@ public class RevendaComArray {
         }
     }
 
-    public boolean altValorCompra(int cod, double valorCompra) {
+    /*
+     * Altera valor de compra do produto
+     * @param cod codigo do produto
+     * @pram v valor de compra
+     */
+    public void altValorCompra(int cod, double v) {
         if(existeProduto(cod))
             for (Produto produto : produtos)
                 if(produto.equals(cod)) {
-                    produto.setValor_compra(valorCompra);
-                    return true;
+                    produto.setValorCompra(v);
+                    break;
                 }
-        
-        return false;
+        else System.out.println("error: produto nao existe");
     }
 
-    public boolean altCusto(int cod, double custo) {
+    /*
+     * Altera valor de compra do produto
+     * @param cod codigo do produto
+     * @pram c valor de custo
+     */
+    public void altCusto(int cod, double c) {
         if(existeProduto(cod))
             for (Produto produto : produtos)
                 if(produto.equals(cod)) {
-                    produto.setCusto(custo);
-                    return true;
+                    produto.setCusto(c);
+                    break;
                 }
-        
-        return false;
+        else System.out.println("error: produto nao existe");
     }
 
-    public boolean altMargemLucro(int cod, double margemLucro) {
+    /*
+     * Altera valor de compra do produto
+     * @param cod codigo do produto
+     * @pram m valor de margem de lucro
+     */
+    public void altMargemLucro(int cod, double m) {
         if(existeProduto(cod))
             for (Produto produto : produtos)
                 if(produto.equals(cod)) {
-                    produto.setMargem_lucro(margemLucro);
-                    return true;
+                    produto.setMargemLucro(m);
+                    break;
                 }
-        
-        return false;
+        else System.out.println("error: produto nao existe");
     }
 }

@@ -1,16 +1,16 @@
 public class Produto {
-    //código do produto
+    // código do produto
     private int codigo;
-    //descrição do produto
+    // descrição do produto
     private String descricao;
-    //custo para armazenar/benefiar o produto
+    // custo para armazenar/benefiar o produto
     private double custo;
-    //valor da compra
-    private double valor_compra;
-    //margem de lucro
-    private double margem_lucro;
-    //quantidade de unidades no estoque
-    private int qtd_estoque;
+    // valor da compra
+    private double valorCompra;
+    // margem de lucro
+    private double margemLucro;
+    // quantidade de unidades no estoque
+    private int qtdEstoque;
 
     /*
      * Construtor
@@ -33,9 +33,9 @@ public class Produto {
     public Produto(int cod, String desc, double valc, double cus, double ml) {
         codigo = cod;
         descricao = desc;
-        valor_compra = valc;
+        valorCompra = valc;
         custo = cus;
-        margem_lucro = ml;
+        margemLucro = ml;
     }
 
     /*
@@ -50,40 +50,52 @@ public class Produto {
     public Produto(int cod, String desc, double valc, double cus, double ml, int qtde) {
         codigo = cod;
         descricao = desc;
-        valor_compra = valc;
+        valorCompra = valc;
         custo = cus;
-        margem_lucro = ml;
-        qtd_estoque = qtde;
+        margemLucro = ml;
+        qtdEstoque = qtde;
     }
 
-    //Adiciona produto ao estoque
+    /*
+     * Adiciona produto ao estoque
+     * @param qtd quantidade de produtos
+     */
     public void compra(int qtd) {
-        qtd_estoque += qtd;
+        qtdEstoque += qtd;
     }
     
-    //Tira produto do estoque
+    /*
+     * Tira produto do estoque
+     * @param qtd quantidade de produtos
+     */
     public void venda(int qtd) {
-        qtd_estoque -= qtd;
+        qtdEstoque -= qtd;
     }
 
-    //calcula preço da venda
+    // calcula preço da venda
     public double calculaPrecoVenda() {
-        return valor_compra + custo + margem_lucro * (valor_compra + custo);
+        return valorCompra + custo + margemLucro * (valorCompra + custo);
     }
 
-    //mudar valor de compra
-    public void setValor_compra(double valor_compra) {
-        this.valor_compra = valor_compra;
+    /*
+     * mudar valor de compra
+     * @param v valor da compra
+     */
+    public void setValorCompra(double v) {
+        this.valorCompra = v;
     }
 
     //obter valor de compra
-    public double getValor_compra() {
-        return valor_compra;
+    public double getValorCompra() {
+        return valorCompra;
     }
 
-    //mudar valor de custo
-    public void setCusto(double custo) {
-        this.custo = custo;
+    /*
+     * muda valor de custo
+     * @param c valor de custo
+     */
+    public void setCusto(double c) {
+        this.custo = c;
     }
 
     //obter valor de custo
@@ -91,16 +103,23 @@ public class Produto {
         return custo;
     }
 
-    //mudar margem de lucro
-    public void setMargem_lucro(double margem_lucro) {
-        this.margem_lucro = margem_lucro;
+    /*
+     * mudar margem de lucro
+     * @param m valor da margem de lucro
+     */
+    public void setMargemLucro(double m) {
+        this.margemLucro = m;
     }
 
     //obter margem de lucro
-    public double getMargem_lucro() {
-        return margem_lucro;
+    public double getMargemLucro() {
+        return margemLucro;
     }
 
+    /*
+     * verifica igualdade do objeto pelo código de produto
+     * @param cod codigo do produto
+     */
     public boolean equals(int cod) {
         return this.codigo == cod;
     }
