@@ -104,4 +104,8 @@ public class Produto {
     public boolean equals(int cod) {
         return this.codigo == cod;
     }
+
+    public String toString() {
+        return codigo+" "+descricao+" "+calculaPrecoVenda();
+    }
 }
