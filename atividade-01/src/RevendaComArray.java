@@ -70,12 +70,15 @@ public class RevendaComArray {
         if(existeProduto(cod))
             for (Produto produto : produtos)
                 if(produto.equals(cod))
-                    System.out.println(produto.getCusto());
+                    System.out.println(produto.calculaPrecoVenda());
         else System.out.println("Error");
     }
 
-    
+    //lista 
     public void listaPrecos() {
-
+        for (Produto produto : produtos) {
+            if(produto != null)
+                System.out.println(produto);
+        }
     }
 }
