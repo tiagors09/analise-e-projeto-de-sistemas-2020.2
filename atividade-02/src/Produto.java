@@ -1,8 +1,8 @@
 abstract class Produto {
-    private String codigo;
-    private String titulo;
-    private String genero;
-    private boolean locado;
+    protected String codigo;
+    protected String titulo;
+    protected String genero;
+    protected boolean locado;
 
-    abstract public double calcularDiaria();
+    abstract protected double calcularDiaria();
 }
