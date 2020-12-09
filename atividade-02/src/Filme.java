@@ -1,4 +1,5 @@
 abstract class Filme extends Produto{
+    // Ano de lançamento do filme
     protected int anoLancamento;
     // Duração do filme é em minutos
     protected int duracao;
