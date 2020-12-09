@@ -1,3 +1,7 @@
+package entidades.atores;
+
+import entidades.atores.abstratos.Funcionario;
+
 public class OperadorSistema extends Funcionario {
     /* Funções
      * Fazer uma locação de um produto a um cliente
@@ -6,4 +10,5 @@ public class OperadorSistema extends Funcionario {
      * Procurar produtos por codigo.
      * Procurar clientes por matricula.
      */
+
 }

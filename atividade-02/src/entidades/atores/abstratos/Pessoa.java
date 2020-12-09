@@ -1,4 +1,6 @@
-abstract class Pessoa {
+package entidades.atores.abstratos;
+
+public abstract class Pessoa {
     // nome da pessoa
     protected String nome;
     // matricula da pessoa

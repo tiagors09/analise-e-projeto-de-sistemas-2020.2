@@ -1,3 +1,7 @@
+package entidades.produtos;
+
+import entidades.produtos.abstratos.Musica;
+
 public class Lp extends Musica {
     private boolean raro;
     

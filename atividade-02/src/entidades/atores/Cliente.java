@@ -1,3 +1,7 @@
+package entidades.atores;
+
+import entidades.atores.abstratos.Pessoa;
+
 public class Cliente extends Pessoa {
     private String endereco;
     private int idade;

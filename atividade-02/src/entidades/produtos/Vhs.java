@@ -1,3 +1,7 @@
+package entidades.produtos;
+
+import entidades.produtos.abstratos.Filme;
+
 public class Vhs extends Filme {
     private boolean cores;
     

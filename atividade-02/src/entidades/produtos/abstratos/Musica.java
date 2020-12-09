@@ -1,4 +1,6 @@
-abstract class Musica extends Produto {
+package entidades.produtos.abstratos;
+
+public abstract class Musica extends Produto {
     // autor da musica
     protected String autor;
     // número de faixas da música

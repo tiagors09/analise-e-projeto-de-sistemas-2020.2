@@ -1,3 +1,7 @@
+package entidades.produtos;
+
+import entidades.produtos.abstratos.Filme;
+
 public class BluRay extends Filme {
     private String[] idiomas = new String[2];
 

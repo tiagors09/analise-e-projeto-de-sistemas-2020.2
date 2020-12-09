@@ -1,4 +1,6 @@
-abstract class Produto {
+package entidades.produtos.abstratos;
+
+public abstract class Produto {
     // Código do produto
     protected String codigo;
     // Título do produto

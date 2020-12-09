@@ -1,3 +1,7 @@
+package entidades.produtos;
+
+import entidades.produtos.abstratos.Musica;
+
 public class Cd extends Musica{
     // diz se esta arranhado
     private boolean arranhado;
