@@ -13,7 +13,7 @@ public abstract class Pessoa {
     }
 
     // Obtêm nome
-    protected String getNome() {
+    public String getNome() {
         return nome;
     }
 
@@ -26,7 +26,7 @@ public abstract class Pessoa {
     }
 
     // Obtêm matricula da pessoa
-    protected int getMatricula() {
+    public int getMatricula() {
         return matricula;
     }
 

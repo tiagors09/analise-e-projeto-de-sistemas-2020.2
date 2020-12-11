@@ -1,5 +1,5 @@
 package basededados;
 
-public class Locacoes {
+public final class Locacoes {
     
 }

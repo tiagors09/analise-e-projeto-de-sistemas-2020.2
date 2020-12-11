@@ -1,5 +1,6 @@
 package entidades.atores;
 
+import basededados.Pessoas;
 import entidades.atores.abstratos.Funcionario;
 import entidades.produtos.abstratos.Produto;
 
@@ -17,7 +18,7 @@ public class Gerente extends Funcionario {
     }
 
     public void adicionarCliente(Cliente c) {
-
+        Pessoas.obterInstancia().adicionar(c);
     }
 
     public void listarClientes() {
