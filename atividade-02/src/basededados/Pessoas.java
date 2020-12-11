@@ -5,7 +5,7 @@ import entidades.atores.abstratos.Pessoa;
 
 public final class Pessoas {
     // Banco de dados de pessoas
-    private static HashMap<String, Pessoa> pessoas = new HashMap<String, Pessoa>();
+    private HashMap<String, Pessoa> pessoas = new HashMap<String, Pessoa>();
     // instancia de Pessoas
     private static Pessoas instancia;
     
@@ -15,6 +15,10 @@ public final class Pessoas {
             instancia = new Pessoas();
         
         return instancia;
+    }
+
+    public HashMap<String, Pessoa> getPessoas() {
+        return pessoas;
     }
 
     // Adicionar

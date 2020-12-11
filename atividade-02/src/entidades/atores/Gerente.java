@@ -1,7 +1,10 @@
 package entidades.atores;
 
+import java.util.Iterator;
+
 import basededados.Pessoas;
 import entidades.atores.abstratos.Funcionario;
+import entidades.atores.abstratos.Pessoa;
 import entidades.produtos.abstratos.Produto;
 
 public class Gerente extends Funcionario {
@@ -22,14 +25,30 @@ public class Gerente extends Funcionario {
     }
 
     public void listarClientes() {
-        
+        Iterator<Pessoa> p = Pessoas.obterInstancia().getPessoas().values().iterator();
+        while(p.hasNext())
+            if(p instanceof Cliente)
+                System.out.println(p);
     }
 
     public void adicionarProduto(Produto p) {
 
     }
 
+    public void listarProdutos() {
+
+    }
+
+
     public void adicionarOperador(OperadorSistema os) {
         
     }
-}
+
+    public void listarOperadores() {
+
+    }
+
+    public void procurarOperador() {
+
+    }
+ }
