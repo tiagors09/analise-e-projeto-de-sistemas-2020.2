@@ -1,13 +1,14 @@
 package entidades.atores;
 
 import entidades.atores.abstratos.Pessoa;
-
 public class Cliente extends Pessoa {
     private String endereco;
     private int idade;
     private char sexo;
 
-    // Construtor Cliente
+    /** 
+     * Construtor Cliente.
+     * */
     public Cliente(String nome, int matricula, String endereco, int idade, char sexo) {
         super(nome, matricula);
         this.endereco = endereco;

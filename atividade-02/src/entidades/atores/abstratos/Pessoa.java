@@ -1,12 +1,16 @@
 package entidades.atores.abstratos;
 
 public abstract class Pessoa {
-    // nome da pessoa
+    /** nome da pessoa */ 
     protected String nome;
-    // matricula da pessoa
+    /** matricula da pessoa */
     protected int matricula;
 
-    // Construtor Pessoa
+    /** 
+     * Construtor Pessoa.
+     * @param nome da pessoa.
+     * @param matricula código de cadastro.
+     * */ 
     public Pessoa(String nome, int matricula) {
         this.nome = nome;
         this.matricula = matricula;
