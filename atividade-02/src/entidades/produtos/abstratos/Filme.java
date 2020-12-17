@@ -6,7 +6,8 @@ public abstract class Filme extends Produto{
     // Duração do filme é em minutos
     protected int duracao;
 
-    public Filme(int anoLancamento, int duracao) {
+    public Filme(String codigo, String titulo, String genero, boolean locado, int anoLancamento, int duracao) {
+        super(codigo, titulo, genero, locado);
         this.anoLancamento = anoLancamento;
         this.duracao = duracao;
     }

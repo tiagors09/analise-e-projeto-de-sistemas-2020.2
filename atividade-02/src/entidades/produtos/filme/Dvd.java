@@ -5,8 +5,18 @@ import entidades.produtos.abstratos.Filme;
 public class Dvd extends Filme {
     private boolean arranhado;
     
-    public Dvd(int duracao, int anoLancamento, boolean arranhado) {
-        super(anoLancamento, duracao);
+    /**
+     * Construtor DVD
+     * @param codigo
+     * @param titulo
+     * @param genero
+     * @param locado
+     * @param anoLancamento
+     * @param duracao
+     * @param arranhado
+     */
+    public Dvd(String codigo, String titulo, String genero, boolean locado, int anoLancamento, int duracao, boolean arranhado) {
+        super(codigo, titulo, genero, locado, anoLancamento, duracao);
         this.arranhado = arranhado;
     }
 

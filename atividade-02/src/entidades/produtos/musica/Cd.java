@@ -1,4 +1,4 @@
-package entidades.produtos;
+package entidades.produtos.musica;
 
 import entidades.produtos.abstratos.Musica;
 
@@ -8,6 +8,23 @@ public class Cd extends Musica{
     // diz de cd duplo
     private boolean duplo;
     
+    /**
+     * Construtor CD
+     * @param codigo do produto
+     * @param titulo do produto
+     * @param genero do produto
+     * @param locado o produto esta locado ou não
+     * @param autor do produto
+     * @param numFaixas número de faixas do produto
+     * @param arranhado o produto está arranhado ou não
+     * @param duplo se o cd é duplo ou não
+     */
+    public Cd(String codigo, String titulo, String genero, boolean locado, String autor, int numFaixas, boolean arranhado, boolean duplo) {
+        super(codigo, titulo, genero, locado, autor, numFaixas);
+        this.arranhado = arranhado;
+        this.duplo = duplo;
+    }
+
     /*
      * Verifica se está arranhado
      * @param arranhado valor que diz se esta arranhado

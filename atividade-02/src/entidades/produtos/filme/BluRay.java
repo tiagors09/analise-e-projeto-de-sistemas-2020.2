@@ -5,23 +5,13 @@ import entidades.produtos.abstratos.Filme;
 public class BluRay extends Filme {
     private String[] idiomas = new String[2];
 
-    /*
+    /**
      * Construtor
      * @param anoLancamento ano de lançamento
      * @param duracao duração do filme
      */ 
-    BluRay(int anoLancamento, int duracao) {
-        super(anoLancamento, duracao);
-    }
-
-    /*
-     * Construtor
-     * @param anoLancamento ano de lançamento
-     * @param duracao duração do filme
-     * @param idiomas idiomas disponiveis no filme
-     */ 
-    BluRay(int anoLancamento, int duracao, String[] idiomas) {
-        super(anoLancamento, duracao);
+    public BluRay(String codigo, String titulo, String genero, boolean locado, int anoLancamento, int duracao, String[] idiomas) {
+        super(codigo, titulo, genero, locado, anoLancamento, duracao);
         this.idiomas = idiomas;
     }
 

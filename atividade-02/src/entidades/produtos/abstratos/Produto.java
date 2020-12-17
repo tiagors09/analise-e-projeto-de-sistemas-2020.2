@@ -1,24 +1,38 @@
 package entidades.produtos.abstratos;
 
 public abstract class Produto {
-    // Código do produto
+    /** Código do produto */
     protected String codigo;
-    // Título do produto
+    /** Título do produto */
     protected String titulo;
-    // Genero do produto  
+    /** Genero do produto */ 
     protected String genero;
-    // Indica se o produto está alocado ou não
+    /** Indica se o produto está alocado ou não */
     protected boolean locado;
 
-    // Calcula a diária do produto
+    /**
+     * Construtor Produto
+     * @param codigo do produto
+     * @param titulo do produto
+     * @param genero do produto
+     * @param locado se o produto esta locado ou nao
+     */
+    public Produto(String codigo, String titulo, String genero, boolean locado) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.genero = genero;
+        this.locado = locado;
+    }
+
+    /** Calcula a diária do produto */
     abstract protected double calcularDiaria();
 
-    // Retorna código do produto
-    protected String getCodigo() {
+    /** Retorna código do produto */
+    public String getCodigo() {
         return codigo;
     }
 
-    /*
+    /** 
      * Insere/altera código do produto
      * @param codigo código do produto
      */
@@ -63,5 +77,9 @@ public abstract class Produto {
      */
     protected void setLocado(boolean locado) {
         this.locado = locado;
+    }
+
+    public String toString() {
+        return "codigo: "+codigo+", titulo: "+titulo+", genero: "+genero+", locado: "+locado;
     }
 }

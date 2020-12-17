@@ -6,9 +6,14 @@ public class Cliente extends Pessoa {
     private int idade;
     private char sexo;
 
-    /** 
-     * Construtor Cliente.
-     * */
+    /**
+     * Construtor do Cliente
+     * @param nome do cliente
+     * @param matricula código do cliente
+     * @param endereco local onde cliente mora
+     * @param idade do cliente
+     * @param sexo do cliente
+     */
     public Cliente(String nome, int matricula, String endereco, int idade, char sexo) {
         super(nome, matricula);
         this.endereco = endereco;
@@ -53,5 +58,9 @@ public class Cliente extends Pessoa {
      */
     public void setSexo(char sexo) {
         this.sexo = sexo;
+    }
+
+    public String toString() {
+        return "Nome: "+nome+" | "+"Idade: "+idade;
     }
 }

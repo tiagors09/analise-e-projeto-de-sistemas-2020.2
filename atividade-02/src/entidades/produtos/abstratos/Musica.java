@@ -6,6 +6,12 @@ public abstract class Musica extends Produto {
     // número de faixas da música
     protected int numFaixas;
 
+    public Musica(String codigo, String titulo, String genero, boolean locado, String autor, int numFaixas) {
+        super(codigo, titulo, genero, locado);
+        this.autor = autor;
+        this.numFaixas = numFaixas;
+    }
+
     // obtem autor
     protected String getAutor() {
         return autor;

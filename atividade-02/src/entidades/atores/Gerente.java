@@ -1,42 +1,49 @@
 package entidades.atores;
 
 import java.util.Iterator;
+import java.util.Map;
 
 import basededados.Pessoas;
+import basededados.Produtos;
 import entidades.atores.abstratos.Funcionario;
 import entidades.atores.abstratos.Pessoa;
 import entidades.produtos.abstratos.Produto;
 
 public class Gerente extends Funcionario {
-    /* Funções
-     * Adicionar um cliente
-     * Adicionar um produto qualquer
-     * Adicionar um operador
-     * Listar os clientes, produtos e operadores
-     * Procurar cliente, produtos e operadores por matricula ou código
-     */
-
     public Gerente(String nome, int matricula, String login, String senha) {
         super(nome, matricula, login, senha);
     }
 
-    public void adicionarCliente(Cliente c) {
-        Pessoas.obterInstancia().adicionar(c);
+    public void adicionarCliente(Pessoa p) {
+        Pessoas.obterInstancia().adicionar(p);
     }
 
     public void listarClientes() {
-        Iterator<Pessoa> p = Pessoas.obterInstancia().getPessoas().values().iterator();
-        while(p.hasNext())
+        // Iterator<Pessoa> p = Pessoas.obterInstancia().getPessoas().values().iterator();
+        // while(p.hasNext())
+        //     if(p instanceof Cliente)
+        //         System.out.println(p);
+        for (Map.Entry<String, Pessoa> p : Pessoas.obterInstancia().getPessoas().entrySet()) {
             if(p instanceof Cliente)
                 System.out.println(p);
+        }
     }
 
+    /**
+     * Adiciona produtos a base de dados.
+     * @param p produto a ser adicionado.
+     */
     public void adicionarProduto(Produto p) {
-
+        Produtos.obterInstancia().adicionar(p);
     }
 
     public void listarProdutos() {
-
+        // Iterator<Produto> p = Produtos.obterInstancia().getProdutos().values().iterator();
+        // while(p.hasNext())
+        //     System.out.println(p);
+        for (Map.Entry<String, Produto> p : Produtos.obterInstancia().getProdutos().entrySet())
+            System.out.println(p);
+            
     }
 
 
