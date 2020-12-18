@@ -1,4 +1,4 @@
-package entidades.produtos;
+package entidades.produtos.filme;
 
 import entidades.produtos.abstratos.Filme;
 
@@ -7,8 +7,7 @@ public class BluRay extends Filme {
 
     /**
      * Construtor
-     * @param anoLancamento ano de lançamento
-     * @param duracao duração do filme
+     * @param idiomas disponiveis do filme.
      */ 
     public BluRay(String codigo, String titulo, String genero, boolean locado, int anoLancamento, int duracao, String[] idiomas) {
         super(codigo, titulo, genero, locado, anoLancamento, duracao);
@@ -32,5 +31,9 @@ public class BluRay extends Filme {
     public double calcularDiaria() {
         // TODO Auto-generated method stub
         return 0;
+    }
+
+    public String toString() {
+        return super.toString()+", idiomas: "+idiomas[0]+" e "+idiomas[1];
     }
 }

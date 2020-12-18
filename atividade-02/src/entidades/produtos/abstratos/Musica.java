@@ -37,4 +37,8 @@ public abstract class Musica extends Produto {
     protected void setNumFaixas(int numFaixas) {
         this.numFaixas = numFaixas;
     }
+
+    public String toString() {
+        return super.toString() +", autor: "+autor+", numero de faixas: "+numFaixas;
+    }
 }

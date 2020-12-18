@@ -40,12 +40,15 @@ public abstract class Produto {
         this.codigo = codigo;
     }
 
-    // Retorna título do produto
+    /**
+     * Retorna título do produto
+     * @return titulo do produto
+     */ 
     protected String getTitulo() {
         return titulo;
     }
 
-    /*
+    /**
      * Insere/altera titulo do produto.
      * @param titulo titulo do produto
      */
@@ -53,25 +56,28 @@ public abstract class Produto {
         this.titulo = titulo;
     }
 
-    // Retorna gênero do produto
+    /**
+     * Retorna gênero do produto
+     * @return gênero do produto
+     */ 
     protected String getGenero() {
         return genero;
     }
 
-    /*
+    /**
      * Insere/altera titulo do produto.
-     * @param titulo titulo do produto
+     * @param titulo do produto
      */
     protected void setGenero(String genero) {
         this.genero = genero;
     }
 
-    // Verifica se esta alocado
+    /** Verifica se esta alocado */ 
     protected boolean estaLocado() {
         return locado;
     }
 
-    /*
+    /**
      * Altera locação do produto.
      * @param locado locação do produto
      */

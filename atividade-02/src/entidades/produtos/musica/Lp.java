@@ -1,4 +1,4 @@
-package entidades.produtos;
+package entidades.produtos.musica;
 
 import entidades.produtos.abstratos.Musica;
 

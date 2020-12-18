@@ -1,4 +1,4 @@
-package entidades.produtos;
+package entidades.produtos.filme;
 
 import entidades.produtos.abstratos.Filme;
 

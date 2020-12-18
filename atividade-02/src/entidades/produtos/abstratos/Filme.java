@@ -27,4 +27,8 @@ public abstract class Filme extends Produto{
     protected void setDuracao(int duracao) {
         this.duracao = duracao;
     }
+
+    public String toString() {
+        return super.toString() +", ano de lancamento: "+anoLancamento+", duracao: "+duracao;
+    }
 }
