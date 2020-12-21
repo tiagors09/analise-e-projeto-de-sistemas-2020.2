@@ -87,7 +87,16 @@ public class Gerente extends Funcionario {
         });
     }
 
-    public OperadorSistema procurarOperador() {
+    /**
+     * Verifica se existe uma matricula m no banco de dados de 
+     * pessoas, se tiver uma instância com uma matrícula correspondente,
+     * retorna uma instância de operador de sistemas.
+     * @param m matricula do operador a ser procurado.
+     * @return operador de sistemas, se não houver matricula no bd, retorna valor null
+     */
+    public Pessoa procurarOperador(String m) {
+        if(Pessoas.obterInstancia().getPessoas().containsKey(m))
+            return Pessoas.obterInstancia().getPessoas().get(m);
         return null;
     }
  }

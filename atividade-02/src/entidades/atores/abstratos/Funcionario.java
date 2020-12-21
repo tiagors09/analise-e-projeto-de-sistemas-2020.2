@@ -18,4 +18,8 @@ public abstract class Funcionario extends Pessoa {
         this.login = login;
         this.senha = senha;
     }
+
+    public String toString() {
+        return super.toString() + String.format("| Login: %-6s| Senha: %-6s", login, senha);
+    }
 }

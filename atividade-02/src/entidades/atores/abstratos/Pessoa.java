@@ -46,6 +46,6 @@ public abstract class Pessoa {
     }
 
     public String toString() {
-        return "nome: "+nome+", matricula:"+matricula;
+        return String.format("Nome: %-8s| Matricula: %-6d", nome, matricula);
     }
 }

@@ -21,19 +21,6 @@ public final class Pessoas {
     }
 
     /**
-     * Verifica se há dados de pessoa p na base de dados.
-     * @param p pessoa a ser verificada.
-     * @return true se a pessoa está na base de dados, ou false caso contrário.
-     */
-    public boolean existe(Pessoa p) {
-        for (Pessoa pc : pessoas.values())
-            if(pc.equals(p))
-                return true;
-
-        return false;
-    }
-
-    /**
      * Obtêm todos os dados das pessoas.
      * @return retorna um HashMap com dados de todas as pessoas cadastradas no banco.
      */

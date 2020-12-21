@@ -61,6 +61,6 @@ public class Cliente extends Pessoa {
     }
 
     public String toString() {
-        return "Nome: "+nome+", "+"Idade: "+idade;
+        return super.toString() + String.format("| Endereco: %8s | Idade: %-5x| Sexo: %-5c", endereco, idade, sexo);
     }
 }
