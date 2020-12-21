@@ -9,6 +9,8 @@ public final class Produtos {
     /** Instância de Produtos */
     private static Produtos instancia;
 
+    private Produtos() { super(); }
+
     /**
      * Retorna base de dados de produtos.
      */

@@ -9,6 +9,8 @@ public final class Pessoas {
     /** Instancia de Pessoas */
     private static Pessoas instancia;
     
+    private Pessoas() { super(); } 
+
     /**
      * Obtêm instância.
      * @return instancia única da classe singleton.

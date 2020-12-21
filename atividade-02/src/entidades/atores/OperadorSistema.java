@@ -1,6 +1,7 @@
 package entidades.atores;
 
 import entidades.atores.abstratos.Funcionario;
+import entidades.produtos.abstratos.Produto;
 
 public class OperadorSistema extends Funcionario {
     /**
@@ -13,4 +14,11 @@ public class OperadorSistema extends Funcionario {
     public OperadorSistema(String nome, int matricula, String login, String senha) {
         super(nome, matricula, login, senha);
     }
+
+    public void fazerLocacao(Produto p, Cliente c) {
+        
+    }
+
+    public void excluirLocacao(Locacao )
+    
 }
