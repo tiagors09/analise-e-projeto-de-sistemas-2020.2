@@ -27,15 +27,13 @@ public class App {
         System.out.println("add");
         var ops2 = new OperadorSistema("Pedro", 002, "002", "002");
         var ops3 = new OperadorSistema("Carlos", 003, "003", "003");
-        var c = new Cliente("Lucas", 2001, "Rua Jose Pires Chaves", 19, 'M');
+        var c = new Cliente("Lucas", 004, "Rua Jose Pires Chaves", 19, 'M');
         g.adicionarCliente(c);
         g.adicionarOperador(ops);
         g.adicionarOperador(ops2);
         g.adicionarOperador(ops3);
         g.listarOperadores();
-        var c2 = g.procurarCliente(2001);
-        if(c2 == null)
-            System.out.println("Objeto nulo");
-        else System.out.println(c2);
+        var c2 = g.procurarCliente("4");
+        System.out.println(c2);
     }
 }

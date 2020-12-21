@@ -40,7 +40,7 @@ public class Gerente extends Funcionario {
      * @param m
      * @return cliente com matricula indicada
      */
-    public Pessoa procurarCliente(int m) {
+    public Pessoa procurarCliente(String m) {
         if(Pessoas.obterInstancia().getPessoas().containsKey(m))
             return Pessoas.obterInstancia().getPessoas().get(m);
         return null;
