@@ -10,6 +10,8 @@ public class Lp extends Musica {
         this.raro = raro;
     }
 
+    
+
     @Override
     protected double calcularDiaria() {
         // TODO Auto-generated method stub

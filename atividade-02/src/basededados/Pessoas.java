@@ -1,8 +1,6 @@
 package basededados;
 
 import java.util.HashMap;
-
-import entidades.atores.OperadorSistema;
 import entidades.atores.abstratos.Pessoa;
 
 public final class Pessoas {

@@ -16,12 +16,12 @@ public abstract class Pessoa {
         this.matricula = matricula;
     }
 
-    // Obtêm nome
+    /** Obtêm nome */
     public String getNome() {
         return nome;
     }
 
-    /*
+    /**
      * Muda nome da pessoa
      * @param nome nome da pessoa
      */
@@ -29,16 +29,23 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    // Obtêm matricula da pessoa
+    /** 
+     * Obtêm matricula da pessoa 
+     * @return inteiro contendo matricula
+    */
     public int getMatricula() {
         return matricula;
     }
 
-    /*
+    /** 
      * Muda matricula
      * @param matricula matricula da pessoa
      */
     protected void setMatricula(int matricula) {
         this.matricula = matricula;
+    }
+
+    public String toString() {
+        return "nome: "+nome+", matricula:"+matricula;
     }
 }

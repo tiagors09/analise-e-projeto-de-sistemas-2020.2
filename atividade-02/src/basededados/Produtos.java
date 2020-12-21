@@ -18,7 +18,7 @@ public final class Produtos {
 
     /**
      * Obtêm instância.
-     * @return obtêm instância única de produtos.
+     * @return instância única de produtos.
      */
     public static Produtos obterInstancia() {
         if(instancia == null) 
