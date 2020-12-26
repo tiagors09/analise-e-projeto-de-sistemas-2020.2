@@ -14,7 +14,8 @@ public class Locacao {
         codProduto = cp;
         matCliente = mc;
         dataSaida = Calendar.getInstance().getTime();
-        // data entrega
+        Calendar.getInstance().setTime(dataSaida);
+        Calendar.getInstance().add(Calendar.DATE, 7);
     }
 
     /**
@@ -25,5 +26,8 @@ public class Locacao {
         return 0.0;
     }
 
+    public String toString() {
+        return String.format("COD. PRODUTO: %s | MAT. CLIENTE: %x | DATA SAÍDA: %t | DATA ENTREGA: %t", codProduto, matCliente, dataSaida, dataEntrega);
+    }
     
 }

@@ -1,6 +1,5 @@
 package entidades.atores;
 
-import java.util.Map;
 import basededados.Pessoas;
 import basededados.Produtos;
 import entidades.atores.abstratos.Funcionario;
@@ -34,17 +33,6 @@ public class Gerente extends Funcionario {
                 System.out.println(entry.getValue());
         });
     }
-
-    /**
-     * Obtêm cliente apartir da matricula
-     * @param m
-     * @return cliente com matricula indicada
-     */
-    public Pessoa procurarCliente(String m) {
-        if(Pessoas.obterInstancia().getPessoas().containsKey(m))
-            return Pessoas.obterInstancia().getPessoas().get(m);
-        return null;
-    }
     
     /**
      * Adiciona produtos a base de dados.
@@ -59,16 +47,6 @@ public class Gerente extends Funcionario {
         Produtos.obterInstancia().getProdutos().entrySet().forEach(entry->{
             System.out.println(entry.getValue());
         });
-    }
-
-    /**
-     * Retorna produto que tem o mesmo código do parâmetro
-     * @param cod
-     * @return Produto que tem o codigo correspondente
-     */
-    public Produto procurarProduto(String cod) {
-        if(Produtos.obterInstancia().getProdutos().containsKey(cod));
-            return Produtos.obterInstancia().getProdutos().get(cod);
     }
 
     /**
