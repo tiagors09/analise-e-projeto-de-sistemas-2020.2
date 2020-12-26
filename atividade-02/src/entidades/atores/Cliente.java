@@ -6,6 +6,8 @@ public class Cliente extends Pessoa {
     private int idade;
     private char sexo;
 
+    public Cliente() { super(); }
+
     /**
      * Construtor do Cliente
      * @param nome do cliente

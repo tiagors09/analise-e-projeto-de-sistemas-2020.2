@@ -7,6 +7,9 @@ import entidades.atores.abstratos.Pessoa;
 import entidades.produtos.abstratos.Produto;
 
 public class Gerente extends Funcionario {
+
+    public Gerente() { super(); }
+
     /**
      * Construtor Gerente
      * @param nome do gerente

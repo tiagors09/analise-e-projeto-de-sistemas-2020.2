@@ -10,6 +10,8 @@ public abstract class Funcionario extends Pessoa {
     /** senha do funcionário */ 
     protected String senha;
 
+    public Funcionario() { super(); }
+
     /** 
      * Construtor do funcionário.
      * @param nome do funcionário.
@@ -42,6 +44,18 @@ public abstract class Funcionario extends Pessoa {
         if(Pessoas.obterInstancia().getPessoas().containsKey(m))
             return Pessoas.obterInstancia().getPessoas().get(m);
         return null;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public boolean equals(Funcionario f) {
+        return this.login == f.login && this.senha == f.senha;
     }
     
     public String toString() {

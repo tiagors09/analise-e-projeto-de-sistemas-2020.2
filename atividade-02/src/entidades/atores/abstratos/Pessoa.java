@@ -6,6 +6,8 @@ public abstract class Pessoa {
     /** matricula da pessoa */
     protected int matricula;
 
+    public Pessoa() { super(); }
+
     /** 
      * Construtor Pessoa.
      * @param nome da pessoa.

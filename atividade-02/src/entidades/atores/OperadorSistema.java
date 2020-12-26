@@ -6,6 +6,9 @@ import entidades.atores.abstratos.Funcionario;
 import entidades.produtos.abstratos.Produto;
 
 public class OperadorSistema extends Funcionario {
+
+    public OperadorSistema() { super(); }
+
     /**
      * Construtor do Operador de Sistemas
      * @param nome do operador
