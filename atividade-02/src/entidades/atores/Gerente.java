@@ -14,11 +14,10 @@ public class Gerente extends Funcionario {
      * Construtor Gerente
      * @param nome do gerente
      * @param matricula do gerente
-     * @param login do gerente
      * @param senha do gerente
      */
-    public Gerente(String nome, int matricula, String login, String senha) {
-        super(nome, matricula, login, senha);
+    public Gerente(String nome, int matricula, String senha) {
+        super(nome, matricula, senha);
     }
 
     /**

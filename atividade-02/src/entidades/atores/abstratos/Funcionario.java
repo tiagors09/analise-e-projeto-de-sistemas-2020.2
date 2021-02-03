@@ -16,12 +16,11 @@ public abstract class Funcionario extends Pessoa {
      * Construtor do funcionário.
      * @param nome do funcionário.
      * @param matricula codigo de cadastro.
-     * @param login para entrar no sistema.
      * @param senha para confirmar entrada no sistema.
      * */ 
-    public Funcionario(String nome, int matricula, String login, String senha) {
+    public Funcionario(String nome, int matricula, String senha) {
         super(nome, matricula);
-        this.login = login;
+        this.login = Integer.toString(matricula);
         this.senha = senha;
     }
     
@@ -44,6 +43,10 @@ public abstract class Funcionario extends Pessoa {
         if(Pessoas.obterInstancia().getPessoas().containsKey(m))
             return Pessoas.obterInstancia().getPessoas().get(m);
         return null;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getSenha() {

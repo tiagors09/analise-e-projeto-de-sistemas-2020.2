@@ -1,20 +1,17 @@
 import java.util.Scanner;
 
+import basededados.Pessoas;
 import entidades.atores.Cliente;
 import entidades.atores.Gerente;
 import entidades.atores.OperadorSistema;
-import entidades.atores.abstratos.Pessoa;
+import entidades.atores.abstratos.Funcionario;
 
 public class Shell {
     private Scanner en;
-    private Gerente g;
-    private OperadorSistema op;
     private boolean shellAtivo;
 
     public Shell() {
         en = new Scanner(System.in);
-        g = new Gerente();
-        op = new OperadorSistema();
         shellAtivo = true;
     }
 
@@ -27,17 +24,19 @@ public class Shell {
         return en.nextInt();
     }
     
-    private Pessoa telaLogin() {
+    private Funcionario telaLogin() {
         System.out.print("***Faça seu Login****\n");
         System.out.print("Digite seu login:_<ENTER> ");
-        String login = en.next();
+        var login = en.next();
         System.out.print("Digite sua senha:_<ENTER> ");
-        String senha = en.next();
+        var senha = en.next();
+        if (Pessoas.obterInstancia().getPessoas().containsKey(login))
+           return (Funcionario) Pessoas.obterInstancia().getPessoas().get(login);
         return null;
     }
     
-    private void visaoGerente(Gerente g) {
-        System.out.println("****Olá Gerente <"+g.getNome()+">*****\n"+
+    private void visaoGerente(Funcionario f) {
+        System.out.println("****Olá Gerente <"+f.getNome()+">*****\n"+
         "1 – Cadastrar Produto\n"+
         "2 – Cadastrar Cliente\n"+
         "3 – Cadastrar Operador\n"+
@@ -49,11 +48,11 @@ public class Shell {
         "9 – Procurar Operador\n"+
         "10 – Sair\n"+
         "Digite a opção:_<ENTER>");
-        respostaGerente(en.nextInt(), g);
+        respostaGerente(en.nextInt(), f);
     }
     
-    private void visaoOperador(OperadorSistema os) {
-        System.out.println("****Olá Operador <"+os.getNome()+">****\n"+
+    private void visaoOperador(Funcionario f) {
+        System.out.println("****Olá Operador <"+f.getNome()+">****\n"+
         "1 – Fazer locação\n"+
         "2 – Dar baixa em locação\n"+
         "3 – Excluir locação\n"+
@@ -61,10 +60,11 @@ public class Shell {
         "5 – Procurar Cliente\n"+
         "6 – Sair\n"+
         "Digite a opção:_<ENTER>");
-        respostaOperador(en.nextInt(), os);
+        respostaOperador(en.nextInt(), f);
     }    
 
-    private void respostaGerente(int op, Gerente g) {
+    private void respostaGerente(int op, Funcionario f) {
+        Gerente g = (Gerente) f;
         switch (op) {
             case 1:
                 g.adicionarCliente(new Cliente());
@@ -76,6 +76,7 @@ public class Shell {
             case 4:
                 break;
             case 5:
+                g.listarClientes();
                 break;
             case 6:
                 break;
@@ -93,7 +94,7 @@ public class Shell {
         }
     }
 
-    private void respostaOperador(int op, OperadorSistema os) {
+    private void respostaOperador(int op, Funcionario f) {
         switch (op) {
             case 6:
                 shellAtivo = false;
@@ -107,8 +108,12 @@ public class Shell {
         while(shellAtivo) {
             switch (telaPerfil()) {
                 case 1:
+                    if(telaLogin() == null) 
+                        visaoGerente(new Gerente("Tiago", 1, "1"));
+                    else visaoGerente(telaLogin());
                     break;
                 case 2:
+                    visaoOperador(telaLogin());
                     break;
                 case 3:
                     shellAtivo = false;
